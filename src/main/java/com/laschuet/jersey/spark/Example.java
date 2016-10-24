@@ -7,6 +7,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+import org.apache.spark.sql.SparkSession;
+
 @Path("example")
 public class Example {
     @Context
@@ -15,6 +17,7 @@ public class Example {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getSparkSessionInfo() {
-        return context.getAttribute("sparkSession").toString();
+        SparkSession sparkSession = (SparkSession) context.getAttribute("sparkSession");
+        return sparkSession.version();
     }
 }
