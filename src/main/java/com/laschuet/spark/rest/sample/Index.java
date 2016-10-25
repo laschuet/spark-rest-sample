@@ -8,7 +8,7 @@ public class Index extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet<Class<?>> classes = new HashSet<>();
-        classes.add(Example.class);
+        classes.add(Info.class);
         return classes;
     }
 }

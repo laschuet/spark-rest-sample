@@ -9,14 +9,15 @@ import javax.ws.rs.Produces;
 
 import org.apache.spark.sql.SparkSession;
 
-@Path("example")
-public class Example {
+@Path("info")
+public class Info {
     @Context
     private ServletContext context = null;
 
+    @Path("version")
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String getSparkSessionInfo() {
+    public String getSparkSessionVersion() {
         SparkSession sparkSession = (SparkSession) context.getAttribute("sparkSession");
         return sparkSession.version();
     }
