@@ -1,0 +1,5 @@
+# Spark REST Sample
+
+## License
+
+Spark REST sample is licensed under the [MIT LICENSE](./LICENSE.txt).
