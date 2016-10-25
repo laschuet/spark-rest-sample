@@ -51,7 +51,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>jersey-apache-spark</finalName>
+        <finalName>spark-rest-sample</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
