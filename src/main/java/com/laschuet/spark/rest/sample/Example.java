@@ -1,4 +1,4 @@
-package com.laschuet.jersey.spark;
+package com.laschuet.spark.rest.sample;
 
 import javax.servlet.ServletContext;
 import javax.ws.rs.core.Context;

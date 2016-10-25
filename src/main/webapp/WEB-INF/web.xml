@@ -4,15 +4,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
                 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-    <display-name>Jersey Apache Spark</display-name>
+    <display-name>Spark REST Sample</display-name>
     <listener>
-        <listener-class>com.laschuet.jersey.spark.ApplicationServletContextListener</listener-class>
+        <listener-class>
+            com.laschuet.spark.rest.sample.ApplicationServletContextListener
+        </listener-class>
     </listener>
     <servlet>
-        <servlet-name>com.laschuet.jersey.spark.Index</servlet-name>
+        <servlet-name>com.laschuet.spark.rest.sample.Index</servlet-name>
     </servlet>
     <servlet-mapping>
-        <servlet-name>com.laschuet.jersey.spark.Index</servlet-name>
+        <servlet-name>com.laschuet.spark.rest.sample.Index</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 </web-app>
