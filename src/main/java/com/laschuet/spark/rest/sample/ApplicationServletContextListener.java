@@ -20,5 +20,8 @@ public class ApplicationServletContextListener implements ServletContextListener
 
     @Override
     public void contextDestroyed(ServletContextEvent event) {
+        ServletContext servletContext = event.getServletContext();
+        SparkSession sparkSession = (SparkSession) servletContext.getAttribute("sparkSession");
+        sparkSession.stop();
     }
 }
