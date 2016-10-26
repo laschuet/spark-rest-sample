@@ -7,6 +7,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+import org.apache.spark.SparkContext;
 import org.apache.spark.sql.SparkSession;
 
 @Path("info")
@@ -20,5 +21,14 @@ public class Info {
     public String getSparkSessionVersion() {
         SparkSession sparkSession = (SparkSession) context.getAttribute("sparkSession");
         return sparkSession.version();
+    }
+
+    @Path("user")
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getSparkContextVersion() {
+        SparkSession sparkSession = (SparkSession) context.getAttribute("sparkSession");
+        SparkContext sparkContext = sparkSession.sparkContext();
+        return sparkContext.sparkUser();
     }
 }
