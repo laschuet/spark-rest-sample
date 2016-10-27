@@ -9,6 +9,7 @@ public class Index extends Application {
     public Set<Class<?>> getClasses() {
         HashSet<Class<?>> classes = new HashSet<>();
         classes.add(Info.class);
+        classes.add(Pipeline.class);
         return classes;
     }
 }
