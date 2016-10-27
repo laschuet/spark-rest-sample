@@ -1,4 +1,4 @@
-# Spark REST Sample
+# Spark REST sample
 
 ## License
 
