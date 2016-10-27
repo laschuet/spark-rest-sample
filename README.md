@@ -5,7 +5,7 @@ with Jersey.
 
 ## License
 
-Spark REST sample is licensed under the [MIT LICENSE](./LICENSE.txt).
+Spark REST sample is licensed under the [MIT License](./LICENSE.txt).
 
 ## Notice
 
