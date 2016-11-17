@@ -29,7 +29,6 @@ import java.util.List;
 import javax.servlet.ServletContext;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -55,7 +54,7 @@ public class Pipeline {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response run() {
+    public LinearRegressionModelBean run() {
         SparkSession sparkSession = (SparkSession) servletContext.getAttribute("sparkSession");
 
         List<Row> trainingData = Arrays.asList(
@@ -79,9 +78,7 @@ public class Pipeline {
         Vector coefficients = linearRegressionModel.coefficients();
         double intercept = linearRegressionModel.intercept();
 
-        String jsonString = "{\"model\":\"" + linearRegressionModel.uid() + "\","
-                    + "\"coefficients\":" + coefficients.toString() + ","
-                    + "\"intercept\":" + intercept + "}";
-        return Response.ok(jsonString).build();
+        return new LinearRegressionModelBean(linearRegressionModel.uid(), coefficients.toArray(),
+                intercept);
     }
 }
